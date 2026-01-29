@@ -18,43 +18,45 @@ public class TicTacToe {
     }
     public static void placex(char[] [] board,int rowpos, int colpos, boolean FirstPlayer )
     {
+        char symbol = 'X';
+        if (!FirstPlayer){symbol = 'O';}
         switch (rowpos) {
             case 0:
                 switch (colpos){
                     case 0:
-                        board[2][3] = 'X';
+                        board[2][3] = symbol;
                         break;
                     case 1:
-                        board[2][9] = 'X';
+                        board[2][9] = symbol;
                         break;
                     case 2:
-                        board[2][15] = 'X';
+                        board[2][15] = symbol;
                         break;
                 }
                 break;
             case 1:
                 switch (colpos){
                     case 0:
-                        board[5][3] = 'X';
+                        board[5][3] = symbol;
                         break;
                     case 1:
-                        board[5][9] = 'X';
+                        board[5][9] = symbol;
                         break;
                     case 2:
-                        board[5][15] = 'X';
+                        board[5][15] = symbol;
                         break;
                 }
                 break;
             case 2:
                 switch (colpos){
                     case 0:
-                        board[8][3] = 'X';
+                        board[8][3] = symbol;
                         break;
                     case 1:
-                        board[8][9] = 'X';
+                        board[8][9] = symbol;
                         break;
                     case 2:
-                        board[8][15] = 'X';
+                        board[8][15] = symbol;
                         break;
                 }
                 break;
@@ -74,7 +76,7 @@ public class TicTacToe {
                 {'|', ' ', ' ', ' ', ' ', ' ', '|',' ', ' ', ' ', ' ', ' ', '|', ' ', ' ', ' ', ' ', ' ','|' },
                 {'|','_', '_', '_', '_', '_', '|','_', '_', '_', '_', '_', '|', '_', '_', '_', '_', '_','|' },};
        printboard();
-
+       boolean FirstPlayer = false;
        Scanner scan = new Scanner(System.in);
        System.out.println("Enter your placement row(0-2)");
        int rowpos = scan.nextInt();
