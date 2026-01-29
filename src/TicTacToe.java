@@ -6,6 +6,14 @@ public class TicTacToe {
     boolean GameOver;
 
     static void play(){}
+    public static void printboard(){
+        for(char[] row : board) {
+            for(char c : row){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
 
      static void main() {
         board = new char[][] {
@@ -16,12 +24,7 @@ public class TicTacToe {
                 {'|', '-', '+', '-', '+', '-','|'},
                 {'|', ' ', '|', ' ', '|', ' ','|'},
                 {'-', '-', '-', '-', '-', '-','-'}};
-        for(char[] row : board) {
-            for(char c : row){
-                System.out.print(c);
-            }
-            System.out.println();
-        }
+       printboard();
 
 
     }
