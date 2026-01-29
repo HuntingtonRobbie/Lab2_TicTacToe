@@ -4,7 +4,7 @@ public class TicTacToe {
     static int BOARDSIZE = 3;
     enum STATUS  {WIN, DRAW, CONTINUE}
     static char[] [] board;
-    boolean FirstPlayer;
+    static boolean FirstPlayer;
     boolean GameOver;
 
     static void play(){}
@@ -14,6 +14,50 @@ public class TicTacToe {
                 System.out.print(c);
             }
             System.out.println();
+        }
+    }
+    public static void placex(char[] [] board,int rowpos, int colpos, boolean FirstPlayer )
+    {
+        switch (rowpos) {
+            case 0:
+                switch (colpos){
+                    case 0:
+                        board[2][3] = 'X';
+                        break;
+                    case 1:
+                        board[2][9] = 'X';
+                        break;
+                    case 2:
+                        board[2][15] = 'X';
+                        break;
+                }
+                break;
+            case 1:
+                switch (colpos){
+                    case 0:
+                        board[5][3] = 'X';
+                        break;
+                    case 1:
+                        board[5][9] = 'X';
+                        break;
+                    case 2:
+                        board[5][15] = 'X';
+                        break;
+                }
+                break;
+            case 2:
+                switch (colpos){
+                    case 0:
+                        board[8][3] = 'X';
+                        break;
+                    case 1:
+                        board[8][9] = 'X';
+                        break;
+                    case 2:
+                        board[8][15] = 'X';
+                        break;
+                }
+                break;
         }
     }
 
@@ -38,47 +82,7 @@ public class TicTacToe {
        int colpos = scan.nextInt();
        System.out.println('('+ String.valueOf(rowpos) + ", " + String.valueOf(colpos) + ')');
 
-       switch (rowpos) {
-           case 0:
-               switch (colpos){
-                   case 0:
-                       board[2][3] = 'X';
-                       break;
-                   case 1:
-                       board[2][9] = 'X';
-                       break;
-                   case 2:
-                       board[2][15] = 'X';
-                       break;
-               }
-               break;
-           case 1:
-               switch (colpos){
-                   case 0:
-                       board[5][3] = 'X';
-                       break;
-                   case 1:
-                       board[5][9] = 'X';
-                       break;
-                   case 2:
-                       board[5][15] = 'X';
-                       break;
-               }
-               break;
-           case 2:
-               switch (colpos){
-                   case 0:
-                       board[8][3] = 'X';
-                       break;
-                   case 1:
-                       board[8][9] = 'X';
-                       break;
-                   case 2:
-                       board[8][15] = 'X';
-                       break;
-               }
-               break;
-       }
+       placex(board,rowpos,colpos,FirstPlayer);
        printboard();
     }
 
